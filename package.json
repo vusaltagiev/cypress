@@ -4,6 +4,6 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "runner": "cypress run"
+    "runner": "cypress open --e2e --browser chrome"
   }
 }

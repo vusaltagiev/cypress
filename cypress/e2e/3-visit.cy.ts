@@ -1,8 +1,13 @@
 describe("basics", () => {
+  beforeEach(() => {
+    cy.visit("textinput");
+  });
   it("visit", () => {
     cy.visit("textinput");
   });
   it("visit", () => {
-    cy.visit("click");
+    cy.url().then((url) => {
+      cy.log(`print url: ${url}`);
+    });
   });
 });

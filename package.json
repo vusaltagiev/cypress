@@ -4,6 +4,6 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "runner": "cypress open --e2e --browser chrome --config baseUrl=http://www.uitestingplayground.com"
+    "runner": "cypress open --e2e --browser chrome --config baseUrl=https://dinssk.com/"
   }
 }

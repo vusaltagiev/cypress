@@ -21,5 +21,8 @@ describe("basics", () => {
     cy.get(
       "button.btn.border-0.icon-link.d-flex.align-items-center.gap-2"
     ).click();
+    cy.get(
+      "button.btn.border-0.icon-link.d-flex.align-items-center.gap-2"
+    ).should("have.text", "Sök");
   });
 });

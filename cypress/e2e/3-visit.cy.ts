@@ -17,6 +17,9 @@ describe("basics", () => {
     });
   });
   it("span challenge", () => {
-    cy.get("span.me-2 ");
+    cy.get("input.form-control").type("feber");
+    cy.get(
+      "button.btn.border-0.icon-link.d-flex.align-items-center.gap-2"
+    ).click();
   });
 });

@@ -1,3 +1,4 @@
+import "cypress-xpath";
 require("@cypress/xpath");
 // ***********************************************************
 // This example support/e2e.ts is processed and

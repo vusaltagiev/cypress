@@ -1,4 +1,5 @@
 import "cypress-xpath";
+import "cypress-real-events";
 require("@cypress/xpath");
 // ***********************************************************
 // This example support/e2e.ts is processed and

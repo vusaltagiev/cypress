@@ -6,6 +6,10 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    env: {
+      demoVar: "Hello DinSSK",
+      dinSSK: "https://dinssk.com/",
+    },
   },
   // pageLoadTimeout: 500,
   // defaultCommandTimeout: 60000,

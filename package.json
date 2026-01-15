@@ -5,7 +5,7 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "runner": "cypress open --e2e --browser chrome --config baseUrl=https://dinssk.com/"
+    "runner": "cypress open --e2e --browser chrome --config baseUrl=https://dinssk.com/ --env demoVar=Hello_from_DinSSK"
   },
   "dependencies": {
     "@cypress/xpath": "^2.0.3",

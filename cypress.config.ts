@@ -11,6 +11,8 @@ export default defineConfig({
       dinSSK: "https://dinssk.com/",
     },
   },
-  // pageLoadTimeout: 500,
+  // pageLoadTimeout: 50000,
   // defaultCommandTimeout: 60000,
+  viewportHeight: 1000,
+  viewportWidth: 1400,
 });

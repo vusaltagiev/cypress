@@ -1,5 +1,3 @@
-import "cypress-xpath";
-import "cypress-real-events";
 require("@cypress/xpath");
 // ***********************************************************
 // This example support/e2e.ts is processed and
@@ -18,3 +16,5 @@ require("@cypress/xpath");
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
+import "cypress-xpath";
+import "cypress-real-events";

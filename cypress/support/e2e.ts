@@ -16,5 +16,6 @@ require("@cypress/xpath");
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
+import "./exceptions";
 import "cypress-xpath";
 import "cypress-real-events";

@@ -7,7 +7,7 @@ describe("Links", () => {
   it("Not Broken Image Assertion", () => {
     cy.get(
       'div > img[src="https://www.dinsskcms.vusaltagiev.se/media/hapdxa3c/allergy-sufferers.jpg"]',
-    )
+    ) //det går lägga last och first
       .should("be.visible")
       .and(($img) => {
         img = $img[0] as unknown as HTMLImageElement;

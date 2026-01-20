@@ -1,3 +1,4 @@
+let img: HTMLImageElement;
 describe("Links", () => {
   beforeEach(() => {
     cy.visit(`${Cypress.env("dinSSK")}diseases-symptoms/allergies`);
@@ -9,7 +10,8 @@ describe("Links", () => {
     )
       .should("be.visible")
       .and(($img) => {
-        expect($img[0].naturalWidth).to.be.greaterThan(0);
+        img = $img[0] as unknown as HTMLImageElement;
+        expect(img.naturalWidth).to.be.greaterThan(0);
       });
   });
 });

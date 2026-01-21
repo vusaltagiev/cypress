@@ -1,4 +1,5 @@
 require("@cypress/xpath");
+require("cy-verify-downloads").addCustomCommand();
 // ***********************************************************
 // This example support/e2e.ts is processed and
 // loaded automatically before your test files.

@@ -11,4 +11,3 @@ describe("Tooltips describe", () => {
       .should("have.text", "Så här lindrar du influensan");
   });
 });
-data-bs-toggle="dropdown"

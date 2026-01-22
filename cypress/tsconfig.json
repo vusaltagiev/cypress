@@ -9,7 +9,8 @@
       "cypress-real-events",
       "cypress-xpath",
       "cypress-file-upload",
-      "cy-verify-downloads"
+      "cy-verify-downloads",
+      "@testing-library/cypress"
     ]
   },
   "include": ["**/*.ts"]

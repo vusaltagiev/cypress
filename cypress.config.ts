@@ -13,6 +13,7 @@ export default defineConfig({
       demoVar: "Hello DinSSK",
       dinSSK: "https://dinssk.com/",
       VT: "https://vusaltagiev.com/",
+      experimentalSessionAndOrigin: true,
     },
   },
   // pageLoadTimeout: 50000,

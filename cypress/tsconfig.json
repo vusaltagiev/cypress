@@ -10,7 +10,8 @@
       "cypress-xpath",
       "cypress-file-upload",
       "cy-verify-downloads",
-      "@testing-library/cypress"
+      "@testing-library/cypress",
+      "@4tw/cypress-drag-drop"
     ]
   },
   "include": ["**/*.ts"]

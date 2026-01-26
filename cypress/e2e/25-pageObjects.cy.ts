@@ -9,7 +9,7 @@ describe("Basics", () => {
   it("Sucess Login Scenario", () => {
     LoginPage.usernameElement.type("test");
     LoginPage.passwordElement.type("Test1234*");
-    LoginPage.loginElement.click();
+    LoginPage.loginElement.click(); 
     cy.url().should("contain", "profile");
     LoginPage.userElement.should("have.text", "test");
     ProfilePage.headerElement.should("have.text", "Profile");
@@ -23,6 +23,6 @@ describe("Basics", () => {
       "have.text",
       "Invalid username or password!"
     );
-    LoginPage.headerElement.should("have.text", "Login");
+    LoginPage.heade  rElement.should("have.text", "Login");
   });
 });

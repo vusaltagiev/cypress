@@ -8,6 +8,8 @@ export default defineConfig({
       // implement node event listeners here
       // Verify download import
       on("task", verifyDownloadTasks);
+      // For the mochawesome reporter
+      require("cypress-mochawesome-reporter/plugin")(on);
     },
     env: {
       demoVar: "Hello DinSSK",
@@ -20,4 +22,5 @@ export default defineConfig({
   // defaultCommandTimeout: 60000,
   viewportHeight: 1000,
   viewportWidth: 1400,
+  reporter: "cypress-mochawesome-reporter",
 });

@@ -1,4 +1,9 @@
 import { defineConfig } from "cypress";
+// Excel requirements
+const xlsx = require("node-xlsx");
+const fs = require("fs");
+const path = require("path");
+
 // Verify download import
 const { verifyDownloadTasks } = require("cy-verify-downloads");
 export default defineConfig({
@@ -8,6 +13,19 @@ export default defineConfig({
       // implement node event listeners here
       // Verify download import
       on("task", verifyDownloadTasks);
+      //Excel implementation
+      on("task", {
+        parseXlsx({ filePath }) {
+          return new Promise((resolve, reject) => {
+            try {
+              const jsonData = xlsx.parse(fs.readFileSync(filePath));
+              resolve(jsonData);
+            } catch (e) {
+              reject(e);
+            }
+          });
+        },
+      });
       // For the mochawesome reporter
       require("cypress-mochawesome-reporter/plugin")(on);
     },
@@ -23,4 +41,21 @@ export default defineConfig({
   viewportHeight: 1000,
   viewportWidth: 1400,
   reporter: "cypress-mochawesome-reporter",
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: "custom-title",
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
+  retries: {
+    // Configure retry attempts for `cypress run`
+    // Default is 0
+    runMode: 2,
+    // Configure retry attempts for `cypress open`
+    // Default is 0
+    openMode: 1,
+  },
+  video: true,
+  screenshotOnRunFailure: true,
 });

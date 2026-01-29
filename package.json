@@ -3,13 +3,15 @@
     "@4tw/cypress-drag-drop": "^2.3.1",
     "@testing-library/cypress": "^10.1.0",
     "cy-verify-downloads": "^0.3.0",
-    "cypress": "^15.8.2",
+    "cypress": "^15.9.0",
     "cypress-mochawesome-reporter": "^4.0.2",
     "cypress-xpath": "^2.0.1",
+    "node-xlsx": "^0.24.0",
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "runner": "cypress open --e2e --browser chrome --config baseUrl=https://dinssk.com/ --env demoVar=Hello_from_DinSSK"
+    "runner": "cypress open --e2e --browser chrome --config baseUrl=https://dinssk.com/ --env demoVar=Hello_from_DinSSK",
+    "cypress-run": "cypress run --browser chrome --spec cypress/e2e/21-tooltips.cy.ts"
   },
   "dependencies": {
     "@cypress/xpath": "^2.0.3",

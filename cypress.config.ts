@@ -3,6 +3,8 @@ import { defineConfig } from "cypress";
 const xlsx = require("node-xlsx");
 const fs = require("fs");
 const path = require("path");
+// mySQL requirements
+const mysql = require("mysql");
 
 // Verify download import
 const { verifyDownloadTasks } = require("cy-verify-downloads");
@@ -26,6 +28,12 @@ export default defineConfig({
           });
         },
       });
+      //mySQL
+      on("task", {
+        queryDb: (query) => {
+          return queryTestDb(query, config);
+        },
+      });
       // For the mochawesome reporter
       require("cypress-mochawesome-reporter/plugin")(on);
     },
@@ -34,6 +42,12 @@ export default defineConfig({
       dinSSK: "https://dinssk.com/",
       VT: "https://vusaltagiev.com/",
       experimentalSessionAndOrigin: true,
+      db: {
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "cypress_test",
+      },
     },
   },
   // pageLoadTimeout: 50000,
@@ -59,3 +73,21 @@ export default defineConfig({
   video: true,
   screenshotOnRunFailure: true,
 });
+
+function queryTestDb(query, config) {
+  // creates a new mysql connection using credentials from cypress.json env's
+  const connection = mysql.createConnection(config.env.db);
+  // start connection to db
+  connection.connect();
+  // exec query + disconnect to db as a Promise
+  return new Promise((resolve, reject) => {
+    connection.query(query, (error, results) => {
+      if (error) reject(error);
+      else {
+        connection.end();
+        // console.log(results)
+        return resolve(results);
+      }
+    });
+  });
+}

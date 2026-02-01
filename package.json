@@ -12,7 +12,7 @@
   },
   "scripts": {
     "runner": "cypress open --e2e --browser chrome --config baseUrl=https://dinssk.com/ --env demoVar=Hello_from_DinSSK",
-    "cypress-run": "cypress run --browser chrome --spec cypress/e2e/21-tooltips.cy.ts"
+    "cypress-run": "cypress run --browser chrome --spec cypress/e2e/21-tooltips.cy.ts --record --key 31cbc175-37c4-4416-9f9f-a4f69dc5ac1c"
   },
   "dependencies": {
     "@cypress/xpath": "^2.0.3",

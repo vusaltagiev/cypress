@@ -5,6 +5,8 @@ const fs = require("fs");
 const path = require("path");
 // mySQL requirements
 const mysql = require("mysql");
+//Fake
+const { faker } = require("@faker-js/faker");
 
 // Verify download import
 const { verifyDownloadTasks } = require("cy-verify-downloads");
@@ -32,6 +34,19 @@ export default defineConfig({
       on("task", {
         queryDb: (query) => {
           return queryTestDb(query, config);
+        },
+      });
+      //Faker
+      on("task", {
+        freshUser() {
+          let user = {
+            username: faker.name.firstName(),
+            email: faker.internet.email(),
+            password: faker.internet.password(),
+            registeredAt: faker.date.past(),
+            vehicle: faker.vehicle.vehicle(),
+          };
+          return user;
         },
       });
       // For the mochawesome reporter
@@ -72,6 +87,7 @@ export default defineConfig({
   },
   video: true,
   screenshotOnRunFailure: true,
+  projectId: "igz8ae",
 });
 
 function queryTestDb(query, config) {
